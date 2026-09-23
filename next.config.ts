@@ -1,7 +1,17 @@
-import type { NextConfig } from "next";
+/** @type {import('next').NextConfig} */
+const nextConfig = {
+  experimental: {
+    serverComponentsExternalPackages: ['cloudinary', 'googleapis'],
+  },
+  images: {
+    domains: ['res.cloudinary.com'],
+  },
+  api: {
+    bodyParser: {
+      sizeLimit: '2gb',
+    },
+    responseLimit: false,
+  },
+}
 
-const nextConfig: NextConfig = {
-  /* config options here */
-};
-
-export default nextConfig;
+module.exports = nextConfig
