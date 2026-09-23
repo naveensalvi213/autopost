@@ -1,7 +1,7 @@
 'use client'
 import { useState } from 'react'
 import Link from 'next/link'
-import { ArrowRight, Zap, Shield, Globe, Instagram, Youtube, ChevronRight, Star } from 'lucide-react'
+import { ArrowRight, Star } from 'lucide-react'
 
 const features = [
   { icon: '⚡', title: 'Upload Once', desc: 'Drop your video one time — we handle the rest across all platforms automatically.' },

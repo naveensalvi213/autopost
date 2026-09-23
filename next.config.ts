@@ -1,17 +1,12 @@
-/** @type {import('next').NextConfig} */
-const nextConfig = {
-  experimental: {
-    serverComponentsExternalPackages: ['cloudinary', 'googleapis'],
-  },
+import type { NextConfig } from 'next'
+
+const nextConfig: NextConfig = {
+  serverExternalPackages: ['cloudinary', 'googleapis'],
   images: {
-    domains: ['res.cloudinary.com'],
-  },
-  api: {
-    bodyParser: {
-      sizeLimit: '2gb',
-    },
-    responseLimit: false,
+    remotePatterns: [
+      { protocol: 'https', hostname: 'res.cloudinary.com' }
+    ],
   },
 }
 
-module.exports = nextConfig
+export default nextConfig
